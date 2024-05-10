@@ -1,9 +1,10 @@
-
+import animation from "../../../public/Animation - 1715326453026.json"
+import Lottie from "lottie-react";
 
 const ErrorPage = () => {
     return (
         <div>
-            <h1>This is error page</h1>
+           <Lottie  className="h-[650px]" animationData={animation} loop={true} />
         </div>
     );
 };

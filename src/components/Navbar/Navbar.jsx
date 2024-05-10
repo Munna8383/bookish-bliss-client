@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CiLight } from "react-icons/ci";
 import { MdOutlineDarkMode } from "react-icons/md";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Navbar = () => {
+
+  const {user,logout}= useContext(AuthContext)
 
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
 
@@ -33,13 +37,14 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li><a>Item 3</a></li>
+            <li><NavLink to={"/"} className={({isActive})=>isActive?"font-bold text-white":"font-bold"}>Home</NavLink></li>
+            <li><NavLink to={"/"} className={({isActive})=>isActive?"font-bold text-white":"font-bold"}>Try</NavLink></li>
+            
           </ul>
         </div>
         <div className="navbar-end space-x-5">
         <button onClick={toggleTheme}>{theme==="light"?<span className='text-3xl'><MdOutlineDarkMode /></span>:<span className="text-3xl"><CiLight /></span>}</button>
-          <button className="btn bg-[#c9c6ac] text-black font-bold">Login</button>
+         {user? <button onClick={()=>logout()} className="btn bg-[#c9c6ac] text-black font-bold">Logout</button> : <Link to={"/login"}><button className="btn bg-[#c9c6ac] text-black font-bold">Login</button></Link>}
         </div>
       </div>
     );
