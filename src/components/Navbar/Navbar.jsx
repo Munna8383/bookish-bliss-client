@@ -44,6 +44,8 @@ const Navbar = () => {
         </div>
         <div className="navbar-end space-x-5">
         <button onClick={toggleTheme}>{theme==="light"?<span className='text-3xl'><MdOutlineDarkMode /></span>:<span className="text-3xl"><CiLight /></span>}</button>
+      
+    <img title={user?.displayName} className="w-10 rounded-full" src={user?user?.photoURL:"https://i.ibb.co/bPPBQSz/3d-character-58.jpg"} />
          {user? <button onClick={()=>logout()} className="btn bg-[#c9c6ac] text-black font-bold">Logout</button> : <Link to={"/login"}><button className="btn bg-[#c9c6ac] text-black font-bold">Login</button></Link>}
         </div>
       </div>
