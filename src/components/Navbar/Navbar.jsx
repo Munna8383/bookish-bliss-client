@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li><NavLink to={"/"} className={({isActive})=>isActive?"font-bold text-white":"font-bold"}>Home</NavLink></li>
-            <li><NavLink to={"/"} className={({isActive})=>isActive?"font-bold text-white":"font-bold"}>Try</NavLink></li>
+            <li><NavLink to={"/addBook"} className={({isActive})=>isActive?"font-bold text-white":"font-bold"}>Add Book</NavLink></li>
             
           </ul>
         </div>
