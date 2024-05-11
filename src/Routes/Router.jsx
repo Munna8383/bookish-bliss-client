@@ -8,6 +8,11 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddBook from "../Pages/AddBook/AddBook";
 import PrivateRoute from "../Routes/PrivateRoute"
+import AllBooks from "../Pages/AllBooks/AllBooks";
+import UpdateBook from "../components/UpdateBook/UpdateBook";
+import CategorizedBook from "../Pages/CategorizedBook/CategorizedBook";
+
+
 
 
   const router = createBrowserRouter([
@@ -32,6 +37,18 @@ import PrivateRoute from "../Routes/PrivateRoute"
             path:"/addBook",
             element: <PrivateRoute><AddBook></AddBook></PrivateRoute>
         },
+        {
+            path:"/allBook",
+            element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>
+        },
+        {
+          path:"/single/:_id",
+          element:<PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>,
+        },
+        {
+          path:"/book/:category",
+          element:<PrivateRoute><CategorizedBook></CategorizedBook></PrivateRoute>,
+        }
       ]
     },
   ]);

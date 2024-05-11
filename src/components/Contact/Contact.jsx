@@ -2,6 +2,10 @@
 import Lottie from "lottie-react";
 import contactAnimation from "../../../public/Animation - 1715350866284.json"
 const Contact = () => {
+
+    const handleContact = e=>{
+        e.preventDefault()
+    }
     return (
         <div className="mt-10">
             <div className="text-center mb-10 space-y-3">
@@ -15,7 +19,7 @@ const Contact = () => {
             </div>
             <div className="w-full sm:w-1/2">
             <div className="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
-                <form>
+                <form onSubmit={handleContact}>
                     <div className="-mx-2 md:items-center md:flex">
                         <div className="flex-1 px-2">
                             <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">First Name</label>

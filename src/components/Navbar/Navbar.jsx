@@ -33,12 +33,13 @@ const Navbar = () => {
             </ul>
           </div>
           <img className="h-12" src="https://i.ibb.co/bN5tw6M/Lovepik-com-401604218-book-and-pen.png" alt="" />
-          <h1 className="text-2xl font-bold text-white">BookishBliss</h1>
+          <h1 className="text-2xl font-bold text-white hidden sm:block">BookishBliss</h1>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li><NavLink to={"/"} className={({isActive})=>isActive?"font-bold text-white":"font-bold"}>Home</NavLink></li>
             <li><NavLink to={"/addBook"} className={({isActive})=>isActive?"font-bold text-white":"font-bold"}>Add Book</NavLink></li>
+            <li><NavLink to={"/allBook"} className={({isActive})=>isActive?"font-bold text-white":"font-bold"}>All Book</NavLink></li>
             
           </ul>
         </div>
