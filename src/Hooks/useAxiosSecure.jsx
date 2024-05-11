@@ -9,7 +9,7 @@ const useAxiosSecure = () => {
 
 
 
-    return axiosSecure
+    return axiosSecure;
  
 };
 
