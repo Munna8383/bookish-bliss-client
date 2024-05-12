@@ -17,6 +17,7 @@ const Register = () => {
         
         const passwordRegex = /^(?=.*[A-Z]).+$/;
         const lowerpasswordRegex = /^(?=.*[a-z]).+$/;
+        const specialCharactersRegex = /[!@#$%^&*(),.?":{}|<>]/
 
        
 
@@ -37,6 +38,11 @@ const Register = () => {
 
         if(!lowerpasswordRegex.test(password)){
             toast.error("password must have an lowercase letter")
+
+            return
+        }
+        if(!specialCharactersRegex.test(password)){
+            toast.error("password must have a special character")
 
             return
         }

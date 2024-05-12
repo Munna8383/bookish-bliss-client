@@ -11,6 +11,7 @@ import PrivateRoute from "../Routes/PrivateRoute"
 import AllBooks from "../Pages/AllBooks/AllBooks";
 import UpdateBook from "../components/UpdateBook/UpdateBook";
 import CategorizedBook from "../Pages/CategorizedBook/CategorizedBook";
+import BookDetails from "../Pages/BookDetails/BookDetails";
 
 
 
@@ -48,6 +49,10 @@ import CategorizedBook from "../Pages/CategorizedBook/CategorizedBook";
         {
           path:"/book/:category",
           element:<PrivateRoute><CategorizedBook></CategorizedBook></PrivateRoute>,
+        },
+        {
+          path:"/bookDetails/:_id",
+          element:<PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
         }
       ]
     },

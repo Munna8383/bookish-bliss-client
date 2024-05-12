@@ -25,6 +25,13 @@ const AllBooks = () => {
      
      console.log(books)
 
+     const handleFilter = () => {
+        const remain = [...books].filter((single) => single.quantity >= 0);
+        
+        setBooks(remain)
+    }
+    
+
 
     return (
         <div className="mt-10 w-11/12 mx-auto">
@@ -35,10 +42,12 @@ const AllBooks = () => {
 
 <Tabs>
    <div className="flex justify-between">
-    <div className="btn">
-        <button>Show Available Book</button>
+    <div >
+        <button className="btn" onClick={handleFilter}>Show Available Book</button>
+        <span className="ml-3 text-lg font-bold">Total Books:{books.length}</span>
     </div>
    <TabList>
+   
       <Tab>Grid View</Tab>
       <Tab>List View</Tab>
     </TabList>
@@ -58,8 +67,8 @@ const AllBooks = () => {
        <div className="flex item-center">
        <h1>Rating:</h1>
        <span><Rating style={{ maxWidth: 100 }} value={item?.rating}/></span>
-       </div>
-        <Link to={`/single/${item._id}`}><button className="btn bg-[#c9c6ac] text-black font-bold w-full">Update</button></Link>
+       </div> 
+        <Link to={`/single/${item._id}`}><button className="btn mt-3 bg-[#c9c6ac] text-black font-bold w-full">Update</button></Link>
     </div>
     
    
