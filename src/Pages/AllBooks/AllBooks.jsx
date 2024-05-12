@@ -6,6 +6,8 @@ import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
 import { Link } from "react-router-dom";
+import { CiGrid41 } from "react-icons/ci";
+import { FaListUl } from "react-icons/fa";
 
 
 const AllBooks = () => {
@@ -41,13 +43,13 @@ const AllBooks = () => {
 <Tabs>
    <div className="flex justify-between">
     <div >
-        <button className="btn" onClick={handleFilter}>Show Available Book</button>
+        <button className="btn btn-outline font-bold" onClick={handleFilter}>Show Available Book</button>
         <span className="ml-3 text-lg font-bold">Total Books:{books.length}</span>
     </div>
    <TabList>
    
-      <Tab>Grid View</Tab>
-      <Tab>List View</Tab>
+      <Tab><span><CiGrid41 /></span></Tab>
+      <Tab><FaListUl /></Tab>
     </TabList>
    </div>
 
