@@ -1,5 +1,6 @@
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Toaster,toast} from 'react-hot-toast';
+import { Helmet} from 'react-helmet-async';
 
 
 const AddBook = () => {
@@ -35,6 +36,7 @@ const AddBook = () => {
     return (
         <div className="mt-10 w-11/12 mx-auto">
             <Toaster></Toaster>
+            <Helmet><title>Add Page || BookishBliss</title></Helmet>
             <div className="text-center">
                 <h1 className="text-3xl font-bold">Add Books</h1>
             </div>

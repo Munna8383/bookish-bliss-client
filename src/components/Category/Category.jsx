@@ -31,7 +31,7 @@ const Category = () => {
             
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 {
-                    cate.map((item,index)=> <Link to={`/book/${item.CategoryName}`} key={index}><div className="card h-[270px] bg-base-100 shadow-xl">
+                    cate.map((item,index)=> <Link to={`/book/${item.CategoryName}`} key={index}><div data-aos="zoom-in" className="card h-[270px] bg-base-100 shadow-xl">
                   <img className="h-full rounded-xl " src={item.image} />
                   </div></Link>)
                 }

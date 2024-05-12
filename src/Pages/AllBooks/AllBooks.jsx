@@ -8,6 +8,7 @@ import '@smastrom/react-rating/style.css'
 import { Link } from "react-router-dom";
 import { CiGrid41 } from "react-icons/ci";
 import { FaListUl } from "react-icons/fa";
+import { Helmet} from 'react-helmet-async';
 
 
 const AllBooks = () => {
@@ -35,6 +36,7 @@ const AllBooks = () => {
 
     return (
         <div className="mt-10 w-11/12 mx-auto">
+            <Helmet><title>All Book || BookishBliss</title></Helmet>
 
             <div className="text-center my-5">
                 <h1 className="text-3xl font-bold">All Books</h1>
