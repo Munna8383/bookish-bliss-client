@@ -89,7 +89,7 @@ const UpdateBook = () => {
             <span className="label-text">Category</span>
         </label>
         <select name="category" defaultValue={one.category} className="select select-bordered">
-            <option>Novel</option>
+            <option >Novel</option>
             <option>Drama</option>
             <option>Sci-Fi</option>
             <option>History</option>
@@ -97,6 +97,7 @@ const UpdateBook = () => {
             <option>Music</option>
         </select>
     </div>
+  
 
     <div className="form-control">
         <label className="label">

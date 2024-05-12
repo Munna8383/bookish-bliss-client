@@ -1,9 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Rating } from '@smastrom/react-rating'
 
+import DatePicker from "react-datepicker";
+import { AuthContext } from "../../Providers/AuthProvider";
+import "react-datepicker/dist/react-datepicker.css";
+
 const BookDetails = () => {
+
+    const {user}= useContext(AuthContext)
 
 
     const { _id } = useParams()
@@ -11,6 +17,8 @@ const BookDetails = () => {
     const [one, setOne] = useState([])
 
     const axiosSecure = useAxiosSecure()
+    const [borrowDate,setBorrowDate]=useState()
+    const [returnDate,setReturnDate]=useState()
 
     useEffect(() => {
 
@@ -23,7 +31,21 @@ const BookDetails = () => {
 
     }, [axiosSecure, _id])
 
-    console.log(one)
+
+    const handleSubmit =(e)=>{
+        e.preventDefault()
+
+        const userName = user.displayName;
+        const userEmail = user.email;
+        const borrowedDate =borrowDate.toString().substring(4,15);
+        const returnedDate = returnDate.toString().substring(4,15);
+
+        const data = {userName,userEmail,borrowedDate,returnedDate}
+
+        console.log(data)
+
+
+    }
     return (
         <div className="w-11/12 mx-auto mt-10">
             <div className="text-center mt-5">
@@ -33,15 +55,15 @@ const BookDetails = () => {
             <div>
                 <div className="card bg-base-100 shadow-2xl">
 
-                    <div className="flex items-center gap-10 mt-5 p-5">
+                    <div className="md:flex items-center gap-10 mt-5 p-5 space-y-3">
 
-                        <div className="w-1/2">
+                        <div className="md:w-1/2">
 
                             <img className="h-[500px] w-full rounded-xl" src={one?.photo} alt="" />
 
                         </div>
 
-                        <div className="w-1/2 space-y-2">
+                        <div className="md:w-1/2 space-y-2">
 
                             <h1 className="text-lg font-bold">Book Name: <span className="font-normal">{one?.bookName}</span></h1>
                             <h1 className="text-lg font-bold">Author Name: <span className="font-normal">{one?.authorName}</span></h1>
@@ -56,9 +78,44 @@ const BookDetails = () => {
 
                             <button disabled={one?.quantity===0} className="btn w-full bg-[#c9c6ac] text-black font-bold" onClick={() => document.getElementById('my_modal_1').showModal()}>Borrow Book</button>
                             <dialog id="my_modal_1" className="modal">
-                                <div className="modal-box h-[500px]">
-                                    <h3 className="font-bold text-lg">Hello!</h3>
-                                    <p className="py-4">Press ESC key or click the button below to close</p>
+                                <div className="modal-box bg-cyan-400 h-[750px]">
+
+                                    <form onSubmit={handleSubmit}>
+
+                                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input type="text" name="name" defaultValue={user.displayName} placeholder="Enter Name" className="input input-bordered" required />
+                    </div>
+
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input type="email" name="email" defaultValue={user?.email} placeholder=" Enter Email" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Borrow Date</span>
+                        </label>
+                        <DatePicker dateFormat={"dd-MM-yyyy"} className="w-full rounded-xl p-3" selected={borrowDate} onChange={(date) => setBorrowDate(date)} />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Return Date</span>
+                        </label>
+                        <DatePicker  dateFormat={"dd-MM-yyyy"} className="w-full rounded-xl p-3" selected={returnDate} onChange={(date) => setReturnDate(date)} />
+                    </div>
+
+                    <div className="form-control mt-4">
+
+<input className="btn bg-[#c9c6ac] text-black" type="submit" value="Submit" />
+</div>
+
+
+
+                                    </form>
                                     <div className="modal-action">
                                         <form method="dialog">
                                             {/* if there is a button in form, it will close the modal */}

@@ -22,11 +22,9 @@ const AllBooks = () => {
 
 
     },[axiosSecure])
-     
-     console.log(books)
 
      const handleFilter = () => {
-        const remain = [...books].filter((single) => single.quantity >= 0);
+        const remain = [...books].filter((single) => single.quantity != 0);
         
         setBooks(remain)
     }
