@@ -1,15 +1,18 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Rating } from '@smastrom/react-rating'
 
 import DatePicker from "react-datepicker";
 import { AuthContext } from "../../Providers/AuthProvider";
 import "react-datepicker/dist/react-datepicker.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const BookDetails = () => {
 
     const {user}= useContext(AuthContext)
+
+    const navigate = useNavigate()
 
 
     const { _id } = useParams()
@@ -40,14 +43,46 @@ const BookDetails = () => {
         const borrowedDate =borrowDate.toString().substring(4,15);
         const returnedDate = returnDate.toString().substring(4,15);
 
+
+        if(one.email===userEmail){
+
+            toast.error("Already Borrowed.")
+
+            return
+        }
+
         const data = {userName,userEmail,borrowedDate,returnedDate}
 
-        console.log(data)
+        axiosSecure.patch(`/borrowUpdate/${one._id}`,data)
+        .then(res=>{
+             if(res.data.modifiedCount==1){
+
+                toast.success("Borrowed Successfully.")
+
+
+                setTimeout(() => {
+
+                    navigate("/borrowed")
+
+
+                    
+                },2000);
+
+              
+
+
+             }
+        })
 
 
     }
     return (
         <div className="w-11/12 mx-auto mt-10">
+            <Toaster
+  position="top-left"
+  reverseOrder={false}
+/>
+
             <div className="text-center mt-5">
                 <h1 className="text-3xl font-bold">Book Details</h1>
             </div>

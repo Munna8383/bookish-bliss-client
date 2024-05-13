@@ -27,10 +27,11 @@ const Navbar = () => {
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <NavLink to={"/"} className={({isActive})=>isActive?"font-bold  text-emerald-500":"font-bold text-white"}>Home</NavLink>
-            <NavLink to={"/addBook"} className={({isActive})=>isActive?"font-bold  text-emerald-500":"font-bold text-white"}>Add Book</NavLink>
-            <NavLink to={"/allBook"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>All Book</NavLink>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-4  p-2 shadow bg-slate-600 rounded-box w-52 z-10">
+            <li><NavLink to={"/"} className={({isActive})=>isActive?"font-bold  text-emerald-500":"font-bold text-white"}>Home</NavLink></li>
+            <li><NavLink to={"/addBook"} className={({isActive})=>isActive?"font-bold  text-emerald-500":"font-bold text-white"}>Add Book</NavLink></li>
+           <li> <NavLink to={"/allBook"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>All Book</NavLink></li>
+            <li><NavLink to={"/borrowed"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>Borrowed Books</NavLink></li>
             </ul>
           </div>
           <img className="h-12" src="https://i.ibb.co/bN5tw6M/Lovepik-com-401604218-book-and-pen.png" alt="" />
@@ -41,6 +42,7 @@ const Navbar = () => {
             <NavLink to={"/"} className={({isActive})=>isActive?"font-bold  text-emerald-500":"font-bold text-white"}>Home</NavLink>
             <NavLink to={"/addBook"} className={({isActive})=>isActive?"font-bold  text-emerald-500":"font-bold text-white"}>Add Book</NavLink>
             <NavLink to={"/allBook"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>All Book</NavLink>
+            <NavLink to={"/borrowed"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>Borrowed Books</NavLink>
             
           </ul>
         </div>

@@ -12,6 +12,7 @@ import AllBooks from "../Pages/AllBooks/AllBooks";
 import UpdateBook from "../components/UpdateBook/UpdateBook";
 import CategorizedBook from "../Pages/CategorizedBook/CategorizedBook";
 import BookDetails from "../Pages/BookDetails/BookDetails";
+import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
 
 
 
@@ -53,6 +54,10 @@ import BookDetails from "../Pages/BookDetails/BookDetails";
         {
           path:"/bookDetails/:_id",
           element:<PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
+        },
+        {
+          path:"/borrowed",
+          element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>,
         }
       ]
     },
