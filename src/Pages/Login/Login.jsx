@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext } from "react";
 import { Toaster,toast} from 'react-hot-toast';
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const {googleLogin,login}= useContext(AuthContext)
@@ -56,6 +57,7 @@ const Login = () => {
     return (
         <div className="w-11/12 mx-auto mt-10">
              <Toaster></Toaster>
+             <Helmet><title>Login || BookishBliss</title></Helmet>
             <div className="text-center space-y-4">
                 <h1 className="text-3xl font-bold">Login Now</h1>
                 <p className="font-semibold w-2/3 mx-auto">Welcome to our platform! Please log in to access exclusive features, personalized content, and connect with a community of like-minded individuals. Unlock a world of possibilities by logging in now!</p>

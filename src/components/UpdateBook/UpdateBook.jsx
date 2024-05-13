@@ -48,7 +48,6 @@ const UpdateBook = () => {
 
     }
 
-    console.log(one)
 
 
   

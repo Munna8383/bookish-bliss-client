@@ -3,6 +3,7 @@ import {FaEye,FaEyeSlash} from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Toaster,toast} from 'react-hot-toast';
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -77,6 +78,7 @@ const Register = () => {
     return (
         <div className="mt-10 w-11/12 mx-auto">
             <Toaster></Toaster>
+            <Helmet><title>Register || BookishBliss</title></Helmet>
 
             <div className="card bg-gray-300 opacity-85 p-5 shadow-3xl w-full sm:w-2/3 mx-auto">
             <div className="text-center">
