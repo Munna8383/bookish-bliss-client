@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const BorrowedBooks = () => {
@@ -26,6 +27,8 @@ const BorrowedBooks = () => {
     .then(res=>{
         if(res.data.modifiedCount==1){
 
+            toast.success("Returned Successfully")
+
             const filtered = data.filter(item=>item._id!==id)
 
             setData(filtered)
@@ -42,6 +45,7 @@ const BorrowedBooks = () => {
 
     return (
         <div className="mt-10 w-11/12 mx-auto">
+            <Toaster></Toaster>
 
             <div className="text-center mt-5">
                 <h1 className="text-3xl font-bold">Borrowed BookList</h1>
