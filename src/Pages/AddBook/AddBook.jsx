@@ -45,7 +45,7 @@ const AddBook = () => {
 
                 <form onSubmit={handleAddBook} className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-                    <div className="form-control col-span-2">
+                    <div className="form-control md:col-span-2">
                         <label className="label">
                             <span className="label-text">Photo</span>
                         </label>
@@ -64,14 +64,14 @@ const AddBook = () => {
                         </label>
                         <input type="number" name="quantity" placeholder="Book Quantity" className="input input-bordered" required />
                     </div>
-                    <div className="form-control col-span-2">
+                    <div className="form-control md:col-span-2">
                         <label className="label">
                             <span className="label-text">Author Name</span>
                         </label>
                         <input type="text" name="authorName" placeholder="Author Name" className="input input-bordered" required />
                     </div>
 
-                    <div className="form-control col-span-2">
+                    <div className="form-control md:col-span-2">
                         <label className="label">
                             <span className="label-text">Category</span>
                         </label>
@@ -85,7 +85,7 @@ const AddBook = () => {
                         </select>
                     </div>
 
-                    <div className="form-control col-span-2">
+                    <div className="form-control md:col-span-2">
                         <label className="label">
                             <span className="label-text">Short Description</span>
                         </label>
@@ -104,7 +104,7 @@ const AddBook = () => {
                         <input type="text" name="bookContent" placeholder="Book Content" className="input input-bordered" required />
                     </div>
 
-                    <div className="form-control mt-6 col-span-2">
+                    <div className="form-control mt-6 md:col-span-2">
 
                         <input className="btn bg-[#c9c6ac] text-black" type="submit" value="Add" />
                     </div>
