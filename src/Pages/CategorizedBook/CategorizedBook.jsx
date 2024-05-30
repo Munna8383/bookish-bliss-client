@@ -29,7 +29,7 @@ const CategorizedBook = () => {
 
     return (
         <div className="mt-10 w-11/12 mx-auto">
-            <div className="mt-5 mb-5 text-center">
+            <div className="mt-5 mb-5 pt-20 text-center">
                 <h1 className="text-3xl font-bold">Categorized Book</h1>
             </div>
 

@@ -14,33 +14,50 @@ import { Helmet} from 'react-helmet-async';
 const AllBooks = () => {
     const [books,setBooks]=useState([])
     const axiosSecure = useAxiosSecure()
+    const [text,getText]= useState("")
 
     useEffect(()=>{
 
-        axiosSecure.get("/entireBook")
+        axiosSecure.get(`/entireBook?search=${text}`)
         .then(res=>{
 
             setBooks(res.data)
         })
 
 
-    },[axiosSecure])
+    },[axiosSecure,text])
+    const handleText= (e)=>{
+        getText(e.target.value)
+
+    }
 
      const handleFilter = () => {
         const remain = [...books].filter((single) => single.quantity != 0);
         
         setBooks(remain)
     }
+
+    const handleSearch=()=>{
+        console.log(text)
+    }
+
+    console.log(books)
     
 
 
     return (
-        <div className="mt-10 w-11/12 mx-auto">
+        <div className="mt-10 pt-20 w-11/12 mx-auto">
             <Helmet><title>All Book || BookishBliss</title></Helmet>
 
-            <div className="text-center my-5">
+            <div className="flex justify-between my-5">
                 <h1 className="text-3xl font-bold">All Books</h1>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input onChange={handleText} type="text" className="grow" placeholder="Search Book" />
+                    <svg onClick={handleSearch} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
+                </label>
             </div>
+
+        
 
 <Tabs>
    <div className="flex justify-between">

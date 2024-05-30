@@ -13,6 +13,7 @@ import UpdateBook from "../components/UpdateBook/UpdateBook";
 import CategorizedBook from "../Pages/CategorizedBook/CategorizedBook";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
+import UserProfile from "../Pages/UserProfile/UserProfile";
 
 
 
@@ -58,6 +59,10 @@ import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
         {
           path:"/borrowed",
           element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>,
+        },
+        {
+          path:"/profile",
+          element:<PrivateRoute><UserProfile></UserProfile></PrivateRoute>
         }
       ]
     },

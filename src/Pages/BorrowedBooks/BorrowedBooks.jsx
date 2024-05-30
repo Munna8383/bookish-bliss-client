@@ -39,7 +39,7 @@ const BorrowedBooks = () => {
    }
    
    if(data.length==0){
-    return <div className="flex justify-center mt-10 text-2xl font-bold mb-20">No Book Found! Please Borrow Book</div>
+    return <div className="flex justify-center pt-20 mt-10 text-2xl font-bold mb-20">No Book Found! Please Borrow Book</div>
    }
 
 
@@ -47,7 +47,7 @@ const BorrowedBooks = () => {
         <div className="mt-10 w-11/12 mx-auto">
             <Toaster></Toaster>
 
-            <div className="text-center mt-5">
+            <div className="text-center pt-20 mt-5">
                 <h1 className="text-3xl font-bold">Borrowed BookList</h1>
             </div>
 

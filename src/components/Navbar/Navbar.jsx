@@ -21,7 +21,7 @@ const Navbar = () => {
       }, [theme]);
 
     return (
-        <div className="navbar bg-[#2f3542] text-white px-5 py-3">
+        <div className="navbar h-[80px] fixed z-20 top-0 opacity-90 bg-[#2f3542] text-white px-5 py-3">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,6 +32,7 @@ const Navbar = () => {
             <li><NavLink to={"/addBook"} className={({isActive})=>isActive?"font-bold  text-emerald-500":"font-bold text-white"}>Add Book</NavLink></li>
            <li> <NavLink to={"/allBook"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>All Book</NavLink></li>
             <li><NavLink to={"/borrowed"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>Borrowed Books</NavLink></li>
+            {user&&<li><NavLink to={"/profile"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>My Profile</NavLink></li>}
             </ul>
           </div>
           <img className="h-12" src="https://i.ibb.co/bN5tw6M/Lovepik-com-401604218-book-and-pen.png" alt="" />
@@ -43,6 +44,7 @@ const Navbar = () => {
             <NavLink to={"/addBook"} className={({isActive})=>isActive?"font-bold  text-emerald-500":"font-bold text-white"}>Add Book</NavLink>
             <NavLink to={"/allBook"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>All Book</NavLink>
             <NavLink to={"/borrowed"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>Borrowed Books</NavLink>
+            {user&&  <NavLink to={"/profile"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>My Profile</NavLink>}
             
           </ul>
         </div>

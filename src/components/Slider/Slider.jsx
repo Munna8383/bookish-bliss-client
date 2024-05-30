@@ -9,7 +9,7 @@ import { EffectCoverflow, Pagination ,Autoplay} from 'swiper/modules';
 
 const Slider = () => {
     return (
-        <div className='mt-10 h-30'>
+        <div className='mt-10 pt-20 h-30'>
               <Swiper
         effect={'coverflow'}
         grabCursor={true}

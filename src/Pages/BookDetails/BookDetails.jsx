@@ -77,7 +77,7 @@ const BookDetails = () => {
 
     }
     return (
-        <div className="w-11/12 mx-auto mt-10">
+        <div className="w-11/12 pt-20 mx-auto mt-10">
             <Toaster
   position="top-left"
   reverseOrder={false}

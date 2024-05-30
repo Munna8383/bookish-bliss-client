@@ -4,7 +4,7 @@ import { Helmet} from 'react-helmet-async';
 
 const ErrorPage = () => {
     return (
-        <div>
+        <div className="pt-20">
             <Helmet><title>Error Page || BookishBliss</title></Helmet>
            <Lottie  className="h-[650px]" animationData={animation} loop={true} />
         </div>

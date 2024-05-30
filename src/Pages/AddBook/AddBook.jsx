@@ -34,7 +34,7 @@ const AddBook = () => {
 
     }
     return (
-        <div className="mt-10 w-11/12 mx-auto">
+        <div className="mt-10 pt-20 w-11/12 mx-auto">
             <Toaster></Toaster>
             <Helmet><title>Add Page || BookishBliss</title></Helmet>
             <div className="text-center">
