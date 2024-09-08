@@ -55,7 +55,7 @@ const Login = () => {
 
 
     return (
-        <div className="w-11/12 mx-auto mt-10">
+        <div className="w-11/12 pt-20 mx-auto mt-10">
              <Toaster></Toaster>
              <Helmet><title>Login || BookishBliss</title></Helmet>
             <div className="text-center space-y-4">

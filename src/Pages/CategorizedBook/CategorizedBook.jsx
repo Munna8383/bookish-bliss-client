@@ -26,6 +26,10 @@ const CategorizedBook = () => {
 
     },[axiosSecure,category])
 
+    if(element.length===0){
+        return <div className="min-h-screen flex justify-center items-end "><span className="loading loading-spinner loading-lg"></span></div>
+    }
+
 
     return (
         <div className="mt-10 w-11/12 mx-auto">
@@ -41,15 +45,15 @@ const CategorizedBook = () => {
                     <div className="card-body">
                   
                       <div className="space-y-2 text-lg font-bold">
-                          <h1>Book Title :<span className="font-semibold"> {item?.bookName}</span></h1>
-                          <h1>Author Name:<span className="font-semibold"> {item?.authorName}</span></h1>
-                          <h1>Category:<span className="font-semibold"> {item?.category}</span></h1>
+                          <h1>Book Title :<span className="font-medium text-base"> {item?.bookName}</span></h1>
+                          <h1>Author Name:<span className="font-medium text-base"> {item?.authorName}</span></h1>
+                          <h1>Category:<span className="font-medium text-base"> {item?.category}</span></h1>
                          <div className="flex item-center">
                          <h1>Rating:</h1>
                          <span><Rating style={{ maxWidth: 100 }} value={item?.rating}/></span>
                          </div>
                    <div className="text-right">
-                  <Link to={`/bookDetails/${item._id}`}> <button className="btn bg-[#c9c6ac] text-black font-bold">Details</button></Link>
+                  <Link to={`/bookDetails/${item._id}`}> <button className="btn btn-sm bg-[#c9c6ac] text-black font-medium text-base">Details</button></Link>
                    </div>
                       </div>
                       

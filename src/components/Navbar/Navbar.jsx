@@ -21,7 +21,7 @@ const Navbar = () => {
       }, [theme]);
 
     return (
-        <div className="navbar h-[80px] fixed z-20 top-0 opacity-90 bg-[#2f3542] text-white px-5 py-3">
+        <div className="navbar max-w-7xl mx-auto h-[60px] sm:h-[82px] fixed z-20 top-0 opacity-90 bg-[#2f3542] text-white px-5 py-3">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,8 +35,8 @@ const Navbar = () => {
             {user&&<li><NavLink to={"/profile"} className={({isActive})=>isActive?"font-bold text-emerald-500":"font-bold text-white"}>My Profile</NavLink></li>}
             </ul>
           </div>
-          <img className="h-12" src="https://i.ibb.co/bN5tw6M/Lovepik-com-401604218-book-and-pen.png" alt="" />
-          <h1 className="text-2xl font-bold text-white hidden sm:block">BookishBliss</h1>
+          <img className="h-12 hidden sm:block" src="https://i.ibb.co/bN5tw6M/Lovepik-com-401604218-book-and-pen.png" alt="" />
+          <h1 className="text-xl sm:2xl font-bold text-white ">BookishBliss</h1>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-6">
@@ -49,10 +49,10 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-5">
-        <button onClick={toggleTheme}>{theme==="light"?<span className='text-3xl'><MdOutlineDarkMode /></span>:<span className="text-3xl"><CiLight /></span>}</button>
+        <button onClick={toggleTheme}>{theme==="light"?<span className='text-2xl'><MdOutlineDarkMode /></span>:<span className="text-2xl"><CiLight /></span>}</button>
       
     <img title={user?.displayName} className="w-10 rounded-full" src={user?user?.photoURL:"https://i.ibb.co/bPPBQSz/3d-character-58.jpg"} />
-         {user? <button onClick={()=>logout()} className="btn bg-[#c9c6ac] text-black font-bold">Logout</button> : <Link to={"/login"}><button className="btn bg-[#c9c6ac] text-black font-bold">Login</button></Link>}
+         {user? <button onClick={()=>logout()} className="btn btn-sm bg-[#c9c6ac] text-black font-bold">Logout</button> : <Link to={"/login"}><button className="btn btn-sm bg-[#c9c6ac] text-black font-bold">Login</button></Link>}
         </div>
       </div>
     );

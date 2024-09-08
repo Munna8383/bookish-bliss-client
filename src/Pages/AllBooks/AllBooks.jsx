@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -9,12 +9,14 @@ import { Link } from "react-router-dom";
 import { CiGrid41 } from "react-icons/ci";
 import { FaListUl } from "react-icons/fa";
 import { Helmet} from 'react-helmet-async';
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const AllBooks = () => {
     const [books,setBooks]=useState([])
     const axiosSecure = useAxiosSecure()
     const [text,getText]= useState("")
+    const {user}= useContext(AuthContext)
 
     useEffect(()=>{
 
@@ -41,7 +43,9 @@ const AllBooks = () => {
         console.log(text)
     }
 
-    console.log(books)
+    if(books.length===0){
+        return <div className="min-h-screen flex justify-center items-center "><span className="loading loading-spinner loading-lg"></span></div>
+    }
     
 
 
@@ -75,19 +79,19 @@ const AllBooks = () => {
     <div className="mt-5">
     <TabPanel>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        {books.map((item,index)=><div key={index} className="card bg-base-100 shadow-xl">
-  <figure><img className="h-[350px] w-full" src={item.photo} alt="Shoes" /></figure>
+        {books.map((item,index)=><div key={index} className="card bg-base-100 shadow-xl shadow-gray-600">
+  <figure><img className="h-[300px]  w-full" src={item.photo} alt="books" /></figure>
   <div className="card-body">
 
     <div className="space-y-2 text-lg font-bold">
-        <h1>Book Title :<span className="font-semibold"> {item?.bookName}</span></h1>
-        <h1>Author Name:<span className="font-semibold"> {item?.authorName}</span></h1>
-        <h1>Category:<span className="font-semibold"> {item?.category}</span></h1>
+        <h1>Book Title :<span className="font-medium text-base"> {item?.bookName}</span></h1>
+        <h1>Author Name:<span className="font-medium text-base"> {item?.authorName}</span></h1>
+        <h1>Category:<span className="font-medium text-base"> {item?.category}</span></h1>
        <div className="flex item-center">
        <h1>Rating:</h1>
        <span><Rating style={{ maxWidth: 100 }} value={item?.rating}/></span>
        </div> 
-        <Link to={`/single/${item._id}`}><button className="btn mt-3 bg-[#c9c6ac] text-black font-bold w-full">Update</button></Link>
+        <Link to={`/single/${item._id}`}><button disabled={!user} className="btn mt-3 bg-[#c9c6ac] text-black text-base font-medium w-full">Update</button></Link>
     </div>
     
    
@@ -138,7 +142,7 @@ const AllBooks = () => {
 						<h1><Rating style={{ maxWidth: 50 }} value={item?.rating}/></h1>
 					</td>
 					<td className="p-3">
-						<Link to={`/single/${item._id}`}><button className="btn bg-[#c9c6ac] text-black ">Update</button></Link>
+						<Link to={`/single/${item._id}`}><button className="btn btn-sm bg-[#c9c6ac] text-black ">Update</button></Link>
 					</td>
 					
 				</tr>)

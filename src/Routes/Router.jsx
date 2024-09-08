@@ -38,11 +38,11 @@ import UserProfile from "../Pages/UserProfile/UserProfile";
         },
         {
             path:"/addBook",
-            element: <PrivateRoute><AddBook></AddBook></PrivateRoute>
+            element:<AddBook></AddBook>
         },
         {
             path:"/allBook",
-            element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>
+            element:<AllBooks></AllBooks>
         },
         {
           path:"/single/:_id",
@@ -50,7 +50,7 @@ import UserProfile from "../Pages/UserProfile/UserProfile";
         },
         {
           path:"/book/:category",
-          element:<PrivateRoute><CategorizedBook></CategorizedBook></PrivateRoute>,
+          element:<CategorizedBook></CategorizedBook>,
         },
         {
           path:"/bookDetails/:_id",

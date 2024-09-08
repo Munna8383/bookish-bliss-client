@@ -22,7 +22,7 @@ const Category = () => {
 
     },[axiosSecure,cate])
     return (
-        <div className="mt-10">
+        <div className="mt-20">
 
             <div className="text-center space-y-4">
                 <h1 className="text-3xl font-bold">Click To View Categorize book</h1>

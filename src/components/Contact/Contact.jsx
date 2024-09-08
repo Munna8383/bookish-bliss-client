@@ -34,7 +34,7 @@ const Contact = () => {
       
     }
     return (
-        <div className="mt-10">
+        <div className="mt-20">
             <Toaster></Toaster>
             <div className="text-center mb-10 space-y-3">
                 <h1 className="text-3xl font-bold">Contact Us</h1>
@@ -46,7 +46,7 @@ const Contact = () => {
 
             </div>
             <div className="w-full sm:w-1/2">
-            <div className="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
+            <div className="p-4 py-6 rounded-lg bg-gray-100 dark:bg-gray-800 md:p-8">
                 <form onSubmit={handleContact}>
                     <div className="-mx-2 md:items-center md:flex">
                         <div className="flex-1 px-2">

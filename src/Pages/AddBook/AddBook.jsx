@@ -41,7 +41,7 @@ const AddBook = () => {
                 <h1 className="text-3xl font-bold">Add Books</h1>
             </div>
 
-            <div className="card md:w-3/4 lg:w-1/2 mx-auto  bg-base-100 shadow-xl mt- 5 flex justify-center p-5">
+            <div className="card md:w-3/4 lg:w-1/2 mx-auto  bg-base-100 shadow-xl shadow-slate-700 mt-5 flex justify-center p-5">
 
                 <form onSubmit={handleAddBook} className="grid grid-cols-1 md:grid-cols-2 gap-5">
 

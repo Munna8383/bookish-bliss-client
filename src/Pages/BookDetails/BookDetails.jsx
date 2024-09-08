@@ -77,7 +77,7 @@ const BookDetails = () => {
 
     }
     return (
-        <div className="w-11/12 pt-20 mx-auto mt-10">
+        <div  className="w-11/12 pt-20 mx-auto mt-10">
             <Toaster
   position="top-left"
   reverseOrder={false}
@@ -87,7 +87,8 @@ const BookDetails = () => {
                 <h1 className="text-3xl font-bold">Book Details</h1>
             </div>
 
-            <div>
+            <div data-aos="fade-up"
+        data-aos-duration="3000" >
                 <div className="card bg-base-100 shadow-2xl">
 
                     <div className="md:flex items-center gap-10 mt-5 p-5 space-y-3">
@@ -111,7 +112,7 @@ const BookDetails = () => {
                          <h1 className="text-lg font-bold">Description: <span className="font-normal">{one?.description}</span></h1>
                          <h1 className="text-lg font-bold">Book Content: <span className="font-normal">{one?.bookContent}</span></h1>
 
-                            <button disabled={one?.quantity===0} className="btn w-full bg-[#c9c6ac] text-black font-bold" onClick={() => document.getElementById('my_modal_1').showModal()}>Borrow Book</button>
+                            <button disabled={one?.quantity===0 || !user} className="btn w-full bg-[#c9c6ac] text-black font-bold" onClick={() => document.getElementById('my_modal_1').showModal()}>Borrow Book</button>
                             <dialog id="my_modal_1" className="modal">
                                 <div className="modal-box bg-cyan-400 h-[750px]">
 
