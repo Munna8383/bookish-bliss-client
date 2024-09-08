@@ -53,8 +53,8 @@ const AllBooks = () => {
         <div className="mt-10 pt-20 w-11/12 mx-auto">
             <Helmet><title>All Book || BookishBliss</title></Helmet>
 
-            <div className="flex justify-between my-5">
-                <h1 className="text-3xl font-bold">All Books</h1>
+            <div className="flex justify-between items-center my-5">
+                <h1 className="text-xl sm:text-3xl font-bold">All Books</h1>
                 <label className="input input-bordered flex items-center gap-2">
                     <input onChange={handleText} type="text" className="grow" placeholder="Search Book" />
                     <svg onClick={handleSearch} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
@@ -65,11 +65,11 @@ const AllBooks = () => {
 
 <Tabs>
    <div className="flex justify-between">
-    <div >
-        <button className="btn btn-outline font-bold" onClick={handleFilter}>Show Available Book</button>
-        <span className="ml-3 text-lg font-bold">Total Books:{books.length}</span>
+    <div className="flex items-center">
+        <button className="btn btn-outline font-medium" onClick={handleFilter}>Show Available Book</button>
+        <span className="ml-1 sm:ml3 text-sm sm:text-lg font-bold">Total Books:{books.length}</span>
     </div>
-   <TabList>
+   <TabList className="flex items-center">
    
       <Tab><span><CiGrid41 /></span></Tab>
       <Tab><FaListUl /></Tab>

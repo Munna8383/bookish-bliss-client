@@ -55,7 +55,7 @@ const BorrowedBooks = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-5">
 
                 {
-                    data.map((item,index)=><div key={index} className="card bg-base-100 shadow-xl">
+                    data.map((item,index)=><div key={index} className="card bg-base-100 shadow-xl shadow-gray-600">
                     <figure><img className="h-[350px] w-full" src={item.photo} alt="Shoes" /></figure>
                     <div className="card-body">
                   

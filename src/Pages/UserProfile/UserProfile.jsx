@@ -19,11 +19,10 @@ const UserProfile = () => {
 
    },[axiosSecure,user.email])
 
-   console.log(data)
     return (
-        <div className=" mt-10 flex justify-center items-center">
+        <div className=" pt-20 flex justify-center items-center">
 
-<div className="card w-[600px] pt-20 pb-5 px-5 text-center space-y-5 bg-base-100 shadow-xl">
+<div className="card w-[600px] pt-5 pb-5 px-5 text-center space-y-5 bg-base-100 shadow-xl shadow-gray-600">
     <div>
         <h1 className="text-center text-2xl font-bold text-gray-700">My Profile</h1>
     </div>
@@ -35,17 +34,17 @@ const UserProfile = () => {
 </div>
 
 <div>
-    <h1 className="text-xl font-bold">Name: {user?.displayName}</h1>
+    <h1 className="text-lg font-bold">Name: <span className="text-base font-medium">{user?.displayName}</span></h1>
 </div>
 <div>
-    <h1 className="text-xl font-bold">Email: {user?.email}</h1>
+    <h1 className="text-lg font-bold">Email: <span className="text-base font-medium">{user?.email}</span></h1>
 </div>
 
 <div>
 <div>
         <h1 className="text-center text-2xl font-bold text-gray-700 mt-5">My Feedback</h1>
     </div>
-<table className="table border-2 mt-5">
+<table className="table border-2 mt-5 text-center">
     {/* head */}
     <thead>
       <tr>
